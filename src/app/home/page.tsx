@@ -11,7 +11,6 @@ export default function Weather() {
                 const response = await fetch(`/api/weather?city=${city}`);
                 const data = await response.json();
                 setWeatherData(data);
-                console.log(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -20,9 +19,11 @@ export default function Weather() {
         fetchWeatherData();
     }, [city]);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setCity(event.target.elements.city.value);
+        const form = event.target as HTMLFormElement;
+        const cityInput = form.elements.namedItem('city') as HTMLInputElement;
+        setCity(cityInput.value);
     };
 
     return (
