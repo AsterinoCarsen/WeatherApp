@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
+import { WeatherData } from "../weatherType";
 
 export default function Weather() {
-    const [weatherData, setWeatherData] = useState(null);
+    const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
     const [city, setCity] = useState("Phoenix");
 
     useEffect(() => {
