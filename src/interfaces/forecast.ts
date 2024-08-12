@@ -1,4 +1,4 @@
-export interface WeatherData {
+export interface ForecastData {
     city: {
         coord: {
             lat: number;
@@ -12,6 +12,7 @@ export interface WeatherData {
         timezone: number;
     };
     list: Array<{
+        dt: number;
         dt_txt: string;
         main: {
             feels_like: number;
