@@ -1,40 +1,77 @@
 export interface ForecastData {
-    city: {
-        coord: {
-            lat: number;
-            lon: number;
-        };
-        country: string;
-        name: string;
-        population: number;
-        sunrise: number;
-        sunset: number;
-        timezone: number;
-    };
-    list: Array<{
-        dt: number;
-        dt_txt: string;
-        main: {
-            feels_like: number;
-            grnd_level: number;
-            humidity: number;
-            pressure: number;
-            sea_level: number;
-            temp: number;
-            temp_kf: number;
-            temp_max: number;
-            temp_min: number;
-        };
+    latitude: number;
+    longitude: number;
+    resolvedAddress: string;
+    tzoffset: number;
+    timezone: string;
+
+    days: Array<{
+        cloudcover: number;
+        conditions: string;
+        datetime: string;
+        description: string;
+
+        dew: number;
+
+        feelslike: number;
+        feelslikemax: number;
+        feelslikemin: number;
+
+        humidity: number;
+        icon: string;
+
+        precip: number;
+        precipprob: number;
+        preciptype: string;
+        snow: number;
+        snowdepth: number;
+
+        sunrise: string;
+        sunset: string;
+
+        temp: number;
+        tempmax: number;
+        tempmin: number;
+
+        uvindex: number;
         visibility: number;
-        weather: Array<{
+
+        winddir: number;
+        windgust: number;
+        windspeed: number;
+
+        hours: Array<{
+            cloudcover: number;
+            conditions: string;
+            datetime: string;
             description: string;
+
+            dew: number;
+
+            feelslike: number;
+
+            humidity: number;
             icon: string;
-            main: string;
+
+            precip: number;
+            precipprob: number;
+            preciptype: string;
+            snow: number;
+            snowdepth: number;
+
+            sunrise: string;
+            sunset: string;
+
+            temp: number;
+            tempmax: number;
+            tempmin: number;
+
+            uvindex: number;
+            visibility: number;
+
+            winddir: number;
+            windgust: number;
+            windspeed: number;
         }>;
-        wind: {
-            deg: number;
-            gust: number;
-            speed: number;
-        };
     }>;
 }
